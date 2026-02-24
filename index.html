@@ -213,7 +213,13 @@ nav.scrolled {
   height:520px; background:var(--warm);
 }
 .hero-img-wrap img { height:100%; object-fit:cover; }
-<img src="images/hero-bg.jpg" alt="男士假髮Jerry店鋪環境" loading="lazy">
+.hero-placeholder {
+  width:100%; height:100%;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  gap:12px; color:var(--text-l);
+  background:linear-gradient(135deg, var(--warm), var(--border));
+}
 .hero-placeholder-icon { font-size:48px; opacity:0.4; }
 .hero-placeholder p { font-size:12px; letter-spacing:0.2em; opacity:0.6; }
 .hero-stats {
@@ -740,10 +746,8 @@ footer {
     <div class="hero-visual">
       <div class="hero-img-wrap">
         <!-- 替換為真實主圖：<img src="images/hero-bg.jpg" alt="男士假髮Jerry" loading="lazy"> -->
-        <div class="hero-placeholder">
-          <div class="hero-placeholder-icon">📸</div>
-          <p>主圖位置 · 建議 1200×800px</p>
-        </div>
+        <img src="images/hero-bg.jpg" alt="男士假髮Jerry店鋪環境" loading="lazy">
+         
       </div>
       <div class="hero-stats">
         <div class="stat"><div class="stat-n">500+</div><div class="stat-l">服務客戶</div></div>
