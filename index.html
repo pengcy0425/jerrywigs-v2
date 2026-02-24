@@ -731,16 +731,30 @@ footer {
   .carousel-dot.active { background:white; width:22px; border-radius:4px; }
 .video-card {
   display:flex; align-items:center; gap:14px;
-  padding:12px 16px; background:white;
+  padding:10px; background:white;
   border:1px solid var(--border); text-decoration:none;
   transition:all 0.3s; color:var(--text);
 }
 .video-card:hover { border-color:var(--brown); transform:translateX(4px); }
-.video-thumb {
-  width:48px; height:48px; flex-shrink:0;
-  background:#FF0000; color:white;
+.video-thumb-img {
+  width:80px; height:56px; flex-shrink:0;
+  position:relative; overflow:hidden; border-radius:2px;
+  background:#eee;
+}
+.video-thumb-img img {
+  width:100%; height:100%; object-fit:cover;
+}
+.video-play {
+  position:absolute; inset:0;
   display:flex; align-items:center; justify-content:center;
-  font-size:18px; border-radius:4px;
+  background:rgba(0,0,0,0.3); color:white;
+  font-size:16px; opacity:0; transition:opacity 0.3s;
+}
+.video-card:hover .video-play { opacity:1; }
+.video-thumb {
+  width:80px; height:56px; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+  font-size:18px; color:white; border-radius:2px;
 }
 .video-platform { font-size:10px; color:var(--text-l); letter-spacing:0.1em; }
 .video-title { font-size:13px; font-weight:500; color:var(--text); margin-top:3px; }
@@ -1304,12 +1318,16 @@ footer {
         </div>
       </div>
       <div class="reveal">
-       <div style="display:flex; flex-direction:column; gap:16px;">
+      <div style="display:flex; flex-direction:column; gap:16px;">
 
   <p style="font-size:11px; letter-spacing:0.3em; color:var(--brown); text-transform:uppercase; margin-bottom:4px;">假髮案例視頻</p>
 
+  <!-- YouTube Shorts（有縮略圖）-->
   <a href="https://www.youtube.com/shorts/UPBGQu_xTmc" target="_blank" class="video-card">
-    <div class="video-thumb">▶</div>
+    <div class="video-thumb-img">
+      <img src="https://img.youtube.com/vi/UPBGQu_xTmc/hqdefault.jpg" alt="案例01">
+      <div class="video-play">▶</div>
+    </div>
     <div class="video-info">
       <div class="video-platform">YouTube Shorts</div>
       <div class="video-title">假髮案例展示 01</div>
@@ -1317,7 +1335,10 @@ footer {
   </a>
 
   <a href="https://www.youtube.com/shorts/rZsrvu6MlbY" target="_blank" class="video-card">
-    <div class="video-thumb">▶</div>
+    <div class="video-thumb-img">
+      <img src="https://img.youtube.com/vi/rZsrvu6MlbY/hqdefault.jpg" alt="案例02">
+      <div class="video-play">▶</div>
+    </div>
     <div class="video-info">
       <div class="video-platform">YouTube Shorts</div>
       <div class="video-title">假髮案例展示 02</div>
@@ -1325,15 +1346,23 @@ footer {
   </a>
 
   <a href="https://www.youtube.com/shorts/g40QrWr0zEs" target="_blank" class="video-card">
-    <div class="video-thumb">▶</div>
+    <div class="video-thumb-img">
+      <img src="https://img.youtube.com/vi/g40QrWr0zEs/hqdefault.jpg" alt="案例03">
+      <div class="video-play">▶</div>
+    </div>
     <div class="video-info">
       <div class="video-platform">YouTube Shorts</div>
       <div class="video-title">假髮案例展示 03</div>
     </div>
   </a>
 
+  <!-- Facebook Reels（手動截圖縮略圖）-->
   <a href="https://www.facebook.com/reel/1093258339549085" target="_blank" class="video-card">
-    <div class="video-thumb" style="background:#1877F2;">▶</div>
+    <div class="video-thumb-img">
+      <img src="images/fb-reel-01.jpg" alt="案例04"
+           onerror="this.parentElement.innerHTML='<div class=\'video-thumb\' style=\'background:#1877F2;\'>▶</div>'">
+      <div class="video-play">▶</div>
+    </div>
     <div class="video-info">
       <div class="video-platform">Facebook Reels</div>
       <div class="video-title">假髮案例展示 04</div>
@@ -1341,7 +1370,11 @@ footer {
   </a>
 
   <a href="https://www.facebook.com/reel/1881085316154087" target="_blank" class="video-card">
-    <div class="video-thumb" style="background:#1877F2;">▶</div>
+    <div class="video-thumb-img">
+      <img src="images/fb-reel-02.jpg" alt="案例05"
+           onerror="this.parentElement.innerHTML='<div class=\'video-thumb\' style=\'background:#1877F2;\'>▶</div>'">
+      <div class="video-play">▶</div>
+    </div>
     <div class="video-info">
       <div class="video-platform">Facebook Reels</div>
       <div class="video-title">假髮案例展示 05</div>
@@ -1349,7 +1382,11 @@ footer {
   </a>
 
   <a href="https://www.facebook.com/reel/1318485559644143" target="_blank" class="video-card">
-    <div class="video-thumb" style="background:#1877F2;">▶</div>
+    <div class="video-thumb-img">
+      <img src="images/fb-reel-03.jpg" alt="案例06"
+           onerror="this.parentElement.innerHTML='<div class=\'video-thumb\' style=\'background:#1877F2;\'>▶</div>'">
+      <div class="video-play">▶</div>
+    </div>
     <div class="video-info">
       <div class="video-platform">Facebook Reels</div>
       <div class="video-title">假髮案例展示 06</div>
