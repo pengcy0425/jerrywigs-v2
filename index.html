@@ -762,11 +762,11 @@ footer {
    /* ════════════════════════════════
    PAIN POINTS
 ════════════════════════════════ */
-#painpoints { overflow:hidden; }
+#painpoints { overflow:hidden; padding-top:40px; padding-bottom:40px; }
 
 .pain-grid {
   display:grid; grid-template-columns:1fr 1.2fr 1fr;
-  gap:24px; align-items:start; margin-bottom:60px;
+  gap:24px; align-items:start; margin-bottom:32px;
 }
 .pain-card {
   display:flex; flex-direction:column; align-items:center;
@@ -821,11 +821,15 @@ footer {
 
 /* 標籤雲 */
 .pain-tags-wrap {
-  position:relative; height:130px; margin-bottom:48px;
+  margin-bottom:48px;
 }
-.pain-tags { position:relative; width:100%; height:100%; }
+.pain-tags {
+  display:flex; flex-wrap:wrap;
+  justify-content:center; gap:12px;
+  padding:20px 0;
+}
 .pain-tag {
-  position:absolute; padding:8px 20px;
+  padding:8px 20px;
   border-radius:999px; font-size:13px;
   white-space:nowrap; letter-spacing:0.05em;
   transition:transform 0.3s ease;
@@ -1069,13 +1073,13 @@ src="https://www.facebook.com/tr?id=4482785531958255&ev=PageView&noscript=1"
     <!-- 標籤雲 -->
     <div class="pain-tags-wrap">
       <div class="pain-tags">
-        <div class="pain-tag pain-tag--dark" style="top:0; left:50%; transform:translateX(-50%);">髮線倒退</div>
-        <div class="pain-tag pain-tag--light" style="top:30px; left:28%;">局部禿／全禿</div>
-        <div class="pain-tag pain-tag--dark" style="top:60px; left:12%;">遺傳雄性禿</div>
-        <div class="pain-tag pain-tag--dark" style="top:60px; left:42%;">大面積缺髮</div>
-        <div class="pain-tag pain-tag--light" style="top:40px; left:58%;">髮量稀疏空洞</div>
-        <div class="pain-tag pain-tag--dark" style="top:60px; left:72%;">M型禿</div>
-        <div class="pain-tag pain-tag--light" style="top:20px; left:80%;">心理壓力掉髮</div>
+        <div class="pain-tag pain-tag--dark" >髮線倒退</div>
+        <div class="pain-tag pain-tag--light" >局部禿／全禿</div>
+        <div class="pain-tag pain-tag--dark" >遺傳雄性禿</div>
+        <div class="pain-tag pain-tag--dark" >大面積缺髮</div>
+        <div class="pain-tag pain-tag--light" >髮量稀疏空洞</div>
+        <div class="pain-tag pain-tag--dark" >M型禿</div>
+        <div class="pain-tag pain-tag--light">心理壓力掉髮</div>
       </div>
     </div>
 
