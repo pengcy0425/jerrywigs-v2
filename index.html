@@ -907,6 +907,51 @@ footer {
   .pain-cta { flex-direction:column; gap:16px; }
   .pain-arrow { display:none; }
 }
+   /* ════════════════════════════════
+   FAQ
+════════════════════════════════ */
+#faq { background:var(--warm); }
+
+.faq-list { max-width:800px; margin:0 auto; }
+.faq-item { border-bottom:1px solid var(--border); }
+.faq-item:first-child { border-top:1px solid var(--border); }
+.faq-q {
+  display:flex; align-items:center; gap:18px;
+  padding:22px 0; cursor:pointer;
+  transition:color 0.3s; user-select:none;
+}
+.faq-q:hover, .faq-q.open { color:var(--brown); }
+.faq-num {
+  font-family:'Playfair Display',serif;
+  font-size:22px; color:var(--border);
+  line-height:1; min-width:36px; transition:color 0.3s;
+}
+.faq-q.open .faq-num { color:var(--brown-l); }
+.faq-text {
+  flex:1; font-family:'Noto Serif TC',serif;
+  font-size:16px; font-weight:500; line-height:1.5;
+}
+.faq-arrow {
+  font-size:22px; color:var(--brown-l);
+  transition:transform 0.35s ease; line-height:1; flex-shrink:0;
+}
+.faq-q.open .faq-arrow { transform:rotate(45deg); }
+.faq-a {
+  max-height:0; overflow:hidden;
+  transition:max-height 0.4s ease, padding 0.4s ease;
+  padding:0 0 0 54px;
+}
+.faq-a.open { max-height:400px; padding:0 0 24px 54px; }
+.faq-a p { font-size:14px; color:var(--text-m); line-height:2; }
+.faq-highlight {
+  display:inline-block; margin-top:10px;
+  padding:4px 12px; background:rgba(139,94,60,0.08);
+  font-size:11px; color:var(--brown); letter-spacing:0.1em;
+}
+@media (max-width:960px) {
+  .faq-text { font-size:14px; }
+  .faq-a, .faq-a.open { padding-left:0; }
+}
    
 </style>
   <!-- Meta Pixel Code -->
@@ -967,6 +1012,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><a href="#craft">假髮工藝</a></li>
     <li><a href="#service">服務售後</a></li>
     <li><a href="#reviews">好評</a></li>
+     <li><a href="#faq">常見問題</a></li>
     <li><a href="#contact">聯絡我們</a></li>
   </ul>
   <div class="nav-social">
@@ -1001,7 +1047,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="perk"><span class="perk-icon">✓</span> 專業顧問一對一服務</div>
       </div>
       <div class="hero-cta">
-  <a href="https://wa.me/8617868002049" target="_blank" class="btn-main">WhatsApp 預約</a>
+  <a href="https://wa.me/8617868002049" target="_blank" class="btn-main">WhatsApp 免費預約</a>
   <a href="#cases" class="btn-ghost">查看案例</a>
   <a href="https://wa.me/8617868002049" target="_blank" class="btn-ghost" onclick="fbq('track', 'Purchase', {value: 100, currency: 'CNY'})">諮詢 Jerry</a>
 </div>
@@ -1413,7 +1459,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="service-num">05</div>
           <div class="service-content">
             <div class="service-name">售後跟進服務</div>
-            <p class="service-desc">購買後持續跟進使用狀況，隨時WhatsApp諮詢，讓您配戴無後顧之憂。</p>
+            <p class="service-desc">購買後持續跟進使用狀況，隨時WhatsApp免費諮詢，讓您配戴無後顧之憂。</p>
             <div class="service-highlight">長期支持</div>
           </div>
         </div>
@@ -1545,6 +1591,49 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </section>
+   <!-- ══ FAQ ══ -->
+<section id="faq" class="section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">FAQ</div>
+      <h2 class="section-title">常見<em>問題</em>解答</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="faq-list reveal">
+
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-num">01</span><span class="faq-text">假髮適用哪些場景？</span><span class="faq-arrow">＋</span></div>
+        <div class="faq-a"><p>日常佩戴、辦公、社交場合均適用，同時支持各類運動場景，包括跑步、健身、游泳等，牢固服貼不脫落。</p><span class="faq-highlight">運動防脫技術</span></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-num">02</span><span class="faq-text">配戴假髮需要剃頭嗎？</span><span class="faq-arrow">＋</span></div>
+        <div class="faq-a"><p>完全不需要剃頭。根據客戶意願及頭髮現況量身訂製，原有頭髮可完整保留，假髮與原生髮自然融合。</p><span class="faq-highlight">零剃頭 · 自然融合</span></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-num">03</span><span class="faq-text">假髮的使用壽命有多長？</span><span class="faq-arrow">＋</span></div>
+        <div class="faq-a"><p>在正常使用與妥善護理的情況下，假髮壽命約為 2–3 年，具體視使用頻率及保養習慣而定。</p><span class="faq-highlight">2–3 年壽命</span></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-num">04</span><span class="faq-text">假髮應如何日常護理？</span><span class="faq-arrow">＋</span></div>
+        <div class="faq-a"><p>可使用普通洗髮水或專用假髮洗髮水清洗。建議每 7 天清洗一次假髮，平時正常清洗自己的頭髮即可。</p><span class="faq-highlight">7 天洗一次</span></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-num">05</span><span class="faq-text">假髮膠需要多久更換一次？</span><span class="faq-arrow">＋</span></div>
+        <div class="faq-a"><p>建議每 3–5 天重新換膠一次。晚上睡前可取下假髮，隔天早上重新黏貼，保持最佳黏著效果。</p><span class="faq-highlight">3–5 天換膠一次</span></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-num">06</span><span class="faq-text">假髮可以染色或燙髮嗎？</span><span class="faq-arrow">＋</span></div>
+        <div class="faq-a"><p>可以！所有假髮材質均採用 100% 真人髮絲，與真髮完全相同，可染色、可電燙，打造任何您喜歡的髮型。</p><span class="faq-highlight">100% 真髮 · 可染可電</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- ══ CONTACT ══ -->
 <section id="contact" class="section">
@@ -1666,7 +1755,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="cta-bar-title">現在預約，免費試戴體驗</div>
         <div class="cta-bar-sub">當日到店 · 1-2小時帶走 · 零壓力諮詢</div>
       </div>
-      <a href="https://wa.me/8617868002049" target="_blank" class="cta-bar-btn">WhatsApp 立即預約</a>
+      <a href="https://wa.me/8617868002049" target="_blank" class="cta-bar-btn">WhatsApp 立即免費預約</a>
     </div>
   </div>
 </section>
@@ -1855,6 +1944,17 @@ document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
     fbq('track', 'Purchase', {value: 100, currency: 'CNY'});
     gtag('event', 'conversion', { 'send_to': 'AW-17969294990' });
     setTimeout(() => window.open(url, '_blank'), 300);
+  });
+});
+   /* ── FAQ 開合 ── */
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const answer = item.querySelector('.faq-a');
+    const isOpen = q.classList.contains('open');
+    document.querySelectorAll('.faq-q').forEach(el => el.classList.remove('open'));
+    document.querySelectorAll('.faq-a').forEach(el => el.classList.remove('open'));
+    if (!isOpen) { q.classList.add('open'); answer.classList.add('open'); }
   });
 });
 </script>
