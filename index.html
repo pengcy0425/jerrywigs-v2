@@ -1056,7 +1056,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="hero-img-wrap">
         <div class="hero-carousel">
           <div class="hero-carousel-track" id="heroTrack">
+
+             <!-- 新增的前四張 -->
             <div class="hero-slide active">
+              <img src="images/hero-new-01.jpg" alt="新案例01" loading="eager">
+            </div>
+            <div class="hero-slide">
+              <img src="images/hero-new-02.jpg" alt="新案例02" loading="lazy">
+            </div>
+            <div class="hero-slide">
+              <img src="images/hero-new-03.jpg" alt="新案例03" loading="lazy">
+            </div>
+            <div class="hero-slide">
+              <img src="images/hero-new-04.jpg" alt="新案例04" loading="lazy">
+            </div>
+            <div class="hero-slide">
                <!-- 第一張輪播圖位置 -->
               <img src="images/hero-01.jpg" alt="名人照片" loading="eager">
             </div>
@@ -1072,11 +1086,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <button class="carousel-btn carousel-prev" onclick="heroSlide(-1)">&#8592;</button>
           <button class="carousel-btn carousel-next" onclick="heroSlide(1)">&#8594;</button>
           <div class="carousel-dots" id="heroDots">
-            <div class="carousel-dot active" onclick="heroGo(0)"></div>
-            <div class="carousel-dot" onclick="heroGo(1)"></div>
-            <div class="carousel-dot" onclick="heroGo(2)"></div>
-            <div class="carousel-dot" onclick="heroGo(3)"></div>
-          </div>
+           <div class="carousel-dot active" onclick="heroGo(0)"></div>
+           <div class="carousel-dot" onclick="heroGo(1)"></div>
+           <div class="carousel-dot" onclick="heroGo(2)"></div>
+           <div class="carousel-dot" onclick="heroGo(3)"></div>
+           <div class="carousel-dot" onclick="heroGo(4)"></div>
+           <div class="carousel-dot" onclick="heroGo(5)"></div>
+           <div class="carousel-dot" onclick="heroGo(6)"></div>
+           <div class="carousel-dot" onclick="heroGo(7)"></div>
+         </div>
         </div>
       </div>
       <div class="hero-stats">
@@ -1904,7 +1922,7 @@ reviewTrack.addEventListener('touchend', e => {
 let heroIndex = 0;
 const heroTrackEl = document.getElementById('heroTrack');
 const heroDotEls = document.querySelectorAll('#heroDots .carousel-dot');
-const heroSlideCount = 4;
+const heroSlideCount =8;
 let heroTimer = null;
 
 function heroGo(index) {
