@@ -1958,7 +1958,9 @@ document.querySelector('.hero-carousel').addEventListener('touchend', e => {
 document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
-    const url = this.href;
+    const baseUrl = this.href.split('?')[0];
+    const text = encodeURIComponent('發送代碼「jerry1110」即可獲得優惠！');
+    const url = baseUrl + '?text=' + text;
     fbq('track', 'Purchase', {value: 100, currency: 'CNY'});
     gtag('event', 'conversion', { 'send_to': 'AW-17969294990' });
     setTimeout(() => window.open(url, '_blank'), 300);
