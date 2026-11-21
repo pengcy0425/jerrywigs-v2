@@ -1,0 +1,8 @@
+光头案例维护说明
+
+五个案例按 index.html 内 slider-bald 区域的顺序展示。
+01 = bold1.jpg；02 = bold2.jpg；03 = 保留原图；04 = bold3.jpg；05 = bold5.jpg。
+以后换图：替换 images/bald-case-对应编号.jpg，保持文件名不变，再更新该图片链接的 v= 版本号。
+修改标题、说明或顺序：在 index.html 搜索 slider-bald，每个 case-card 是一个完整案例；移动整段即可排序。
+图片保持原始比例完整展示。本次未改其他分类、视觉样式或预约功能。
+首页轮播：新上传第一、二张分别替换 hero-new-03.jpg、04.jpg；default.jpg 新增为 hero-new-05.jpg。轮播现为9张，数量自动统计；新增图片时还需增加对应导航圆点。换图后更新链接版本号。

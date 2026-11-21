@@ -953,6 +953,177 @@ footer {
   .faq-a, .faq-a.open { padding-left:0; }
 }
    
+/* Studio hero background: keep copy legible over the photograph. */
+#hero .hero-bg {
+  background: url('images/hero-studio-background.png') center center / cover no-repeat;
+}
+#hero .hero-bg::after {
+  background: linear-gradient(90deg, rgba(250,247,242,.98) 0%, rgba(250,247,242,.95) 30%, rgba(250,247,242,.82) 48%, rgba(250,247,242,.28) 72%, rgba(250,247,242,.12) 100%);
+}
+#hero .hero-content { position:relative; }
+#hero .hero-sub, #hero .perk { color:var(--text); }
+#hero .btn-ghost { background:rgba(250,247,242,.85); }
+#hero .btn-ghost:hover { background:var(--brown); }
+@media (max-width:960px) {
+  #hero .hero-bg { background-position:60% center; }
+  #hero .hero-bg::after {
+    background:linear-gradient(180deg, rgba(250,247,242,.30) 0%, rgba(250,247,242,.72) 35%, rgba(250,247,242,.97) 62%, rgba(250,247,242,.99) 100%);
+  }
+}
+/* Preserve the full original hero image on every screen size. */
+#hero .hero-img-wrap { height:auto; }
+#hero .hero-carousel { height:auto; }
+#hero .hero-carousel-track { height:auto; align-items:flex-start; }
+#hero .hero-slide { height:auto; }
+#hero .hero-slide img {
+  position:static; inset:auto;
+  width:100%; height:auto; object-fit:contain;
+}
+@media (max-width:960px) {
+  #hero .hero-badge-float { right:8px; top:8px; transform:translateY(-100%); }
+  #hero .hero-visual { margin-top:28px; }
+}
+/* Continuous photographic backdrop from concerns through aftercare. */
+.studio-background-sections {
+  position:relative; isolation:isolate;
+  background:var(--cream);
+}
+.studio-background-sections::before,
+.studio-background-sections::after {
+  content:''; position:absolute; left:0; right:0; z-index:-1;
+  pointer-events:none;
+}
+.studio-background-sections::before {
+  top:0; height:52%;
+  background:linear-gradient(rgba(250,247,242,.86),rgba(250,247,242,.90)),
+    url('images/sections-studio.jpg') center / cover no-repeat;
+}
+.studio-background-sections::after {
+  top:48%; bottom:0;
+  background:linear-gradient(to bottom,var(--cream),rgba(250,247,242,.87) 10%,rgba(250,247,242,.89)),
+    url('images/sections-display.jpg') center / cover no-repeat;
+}
+.studio-background-sections #painpoints,
+.studio-background-sections #cases,
+.studio-background-sections #craft,
+.studio-background-sections #service { background:transparent !important; }
+.studio-background-sections .section-desc,
+.studio-background-sections .pain-sub,
+.studio-background-sections .service-desc { color:var(--text); }
+.studio-background-sections .craft-card,
+.studio-background-sections .case-info { background:rgba(255,255,255,.95); }
+@media (max-width:960px) {
+  .studio-background-sections::before { background-position:48% top; }
+  .studio-background-sections::after { background-position:50% center; }
+}
+/* Clearer photographs with readability confined to content surfaces. */
+.studio-background-sections::before {
+  background:linear-gradient(rgba(250,247,242,.30),rgba(250,247,242,.38)),
+    url('images/sections-studio.jpg') center / cover no-repeat;
+}
+.studio-background-sections::after {
+  background:linear-gradient(to bottom,rgba(250,247,242,.40),rgba(250,247,242,.25) 12%,rgba(250,247,242,.35)),
+    url('images/sections-display.jpg') center / cover no-repeat;
+}
+.studio-background-sections .section-header,
+.studio-background-sections .pain-bracket,
+.studio-background-sections .pain-cta-text,
+.studio-background-sections .service-list {
+  background:rgba(250,247,242,.94);
+  padding:24px;
+  border-radius:4px;
+}
+.studio-background-sections .case-tabs { background:rgba(250,247,242,.96); }
+.studio-background-sections .pain-tag--light { background:rgba(250,247,242,.96); }
+.studio-background-sections .slider-btn { background:var(--white); }
+@media (max-width:960px) {
+  .studio-background-sections .section-header,
+  .studio-background-sections .service-list { padding:20px 16px; }
+}
+/* Phone layout: size photographs to the viewport, not the long page. */
+@media (max-width:600px) {
+  .studio-background-sections::before,
+  .studio-background-sections::after { display:none; }
+  .studio-background-sections #painpoints,
+  .studio-background-sections #cases {
+    background:linear-gradient(rgba(250,247,242,.42),rgba(250,247,242,.42)),url('images/sections-studio.jpg') center top / 100% auto repeat-y !important;
+  }
+  .studio-background-sections #craft,
+  .studio-background-sections #service {
+    background:linear-gradient(rgba(250,247,242,.38),rgba(250,247,242,.38)),url('images/sections-display.jpg') center top / 100% auto repeat-y !important;
+  }
+  .studio-background-sections .section { padding:44px 16px; }
+  .studio-background-sections .section-header { margin-bottom:28px; padding:20px 14px; }
+  .studio-background-sections .section-title { font-size:28px; line-height:1.45; }
+  .studio-background-sections .section-desc { font-size:14px; line-height:1.8; }
+  .studio-background-sections .pain-card { padding:8px 0; transform:none; }
+  .studio-background-sections .pain-bracket { width:100%; padding:20px 16px; }
+  .studio-background-sections .pain-tags-wrap { height:auto; margin-bottom:20px; }
+  .studio-background-sections .pain-tags { gap:8px; padding:12px 0; }
+  .studio-background-sections .pain-tag { font-size:13px; padding:8px 12px; }
+  .studio-background-sections .pain-cta-text { width:100%; padding:20px 12px; }
+  .studio-background-sections .case-tabs { margin-bottom:24px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .studio-background-sections .case-tab { text-align:center; padding:12px 8px; }
+  .studio-background-sections .case-card { flex-basis:100%; }
+  .studio-background-sections .craft-grid { gap:16px; }
+  .studio-background-sections .craft-card { padding:24px 20px; }
+  .studio-background-sections .service-grid { gap:24px; }
+  .studio-background-sections .service-visual { height:auto; }
+  .studio-background-sections .service-visual img { height:auto; width:100%; }
+  .studio-background-sections .service-list { padding:20px 16px; }
+  .studio-background-sections .service-item { gap:12px; padding:18px 0; }
+  .studio-background-sections .service-num { min-width:30px; font-size:24px; color:var(--brown); }
+  #hero .hero-inner { padding:32px 16px; gap:28px; }
+  #hero .hero-cta { flex-wrap:wrap; gap:12px; }
+  #hero .btn-main, #hero .btn-ghost { padding:14px 20px; letter-spacing:.08em; }
+  #hero .hero-stats { padding:18px 12px; gap:12px; justify-content:space-around; }
+  #hero .hero-slide { min-width:0; }
+  #hero .carousel-btn { width:32px; height:32px; }
+  #hero .carousel-prev { left:4px; }
+  #hero .carousel-next { right:4px; }
+  #hero .carousel-dots { bottom:6px; gap:5px; }
+}
+/* Documentary-style illustrations with separate readable copy. */
+#painpoints .pain-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; align-items:stretch; }
+#painpoints .pain-card { padding:0; transform:none; overflow:hidden; background:rgba(250,247,242,.97); border:1px solid var(--border); border-radius:5px; }
+#painpoints .pain-photo { width:100%; }
+#painpoints .pain-photo img, #craft .craft-photo img { width:100%; height:auto; aspect-ratio:3/2; object-fit:contain; }
+#painpoints .pain-bracket { flex:1; width:100%; padding:24px 16px; background:transparent; }
+#painpoints .pain-title, #painpoints .pain-card--center .pain-title { font-size:22px; }
+#craft .craft-card { padding:0 0 24px; }
+#craft .craft-photo { width:100%; margin-bottom:22px; overflow:hidden; }
+#craft .craft-name, #craft .craft-desc { margin-left:24px; margin-right:24px; }
+#craft .craft-tag { margin-left:24px; }
+@media(max-width:960px){
+ #painpoints .pain-grid { grid-template-columns:1fr; gap:20px; }
+ #painpoints .pain-card { max-width:560px; width:100%; margin:auto; }
+ #craft .craft-card { padding:0 0 24px; }
+}
+/* Clear photo above; softly frosted background behind review copy. */
+#reviews .review-track { align-items:stretch; }
+#reviews .review-card {
+  padding:0 0 24px; overflow:hidden; isolation:isolate;
+  background:var(--cream); border-radius:5px;
+}
+#reviews .review-card::before {
+  content:''; position:absolute; inset:0; z-index:-2;
+  background-image:var(--review-photo); background-size:100% auto;
+  background-position:center bottom; filter:blur(3px);
+}
+#reviews .review-card::after {
+  content:''; position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(to bottom,transparent 28%,rgba(250,247,242,.88) 50%,rgba(250,247,242,.97) 100%);
+}
+#reviews .review-photo { position:relative; margin-bottom:22px; background:var(--warm); }
+#reviews .review-photo img { width:100%; height:auto; object-fit:contain; }
+#reviews .review-quote { display:none; }
+#reviews .review-stars, #reviews .review-text, #reviews .review-author { margin-left:22px; margin-right:22px; }
+#reviews .review-text { color:var(--text); font-weight:400; }
+#reviews .review-meta { color:var(--text-m); }
+@media(max-width:960px){
+ #reviews .review-card { flex:0 0 100%; }
+ #reviews .review-photo { margin-bottom:20px; }
+}
 </style>
   <!-- Meta Pixel Code -->
 <script>
@@ -1057,7 +1228,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="hero-carousel">
           <div class="hero-carousel-track" id="heroTrack">
 
-             <!-- 新增的前四張 -->
+             <!-- 新增的前五張 -->
             <div class="hero-slide active">
               <img src="images/hero-new-01.jpg" alt="新案例01" loading="eager">
             </div>
@@ -1065,10 +1236,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <img src="images/hero-new-02.jpg" alt="新案例02" loading="lazy">
             </div>
             <div class="hero-slide">
-              <img src="images/hero-new-03.jpg" alt="新案例03" loading="lazy">
+              <img src="images/hero-new-03.jpg?v=20261121-2" alt="新案例03" loading="lazy">
             </div>
             <div class="hero-slide">
-              <img src="images/hero-new-04.jpg" alt="新案例04" loading="lazy">
+                            <img src="images/hero-new-04.jpg?v=20261121-2" alt="新案例04" loading="lazy">
+            </div>
+            <div class="hero-slide">
+              <img src="images/hero-new-05.jpg?v=20261121-2" alt="髮際線與佩戴細節展示" loading="lazy">
             </div>
             <div class="hero-slide">
                <!-- 第一張輪播圖位置 -->
@@ -1094,6 +1268,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
            <div class="carousel-dot" onclick="heroGo(5)"></div>
            <div class="carousel-dot" onclick="heroGo(6)"></div>
            <div class="carousel-dot" onclick="heroGo(7)"></div>
+           <div class="carousel-dot" onclick="heroGo(8)"></div>
          </div>
         </div>
       </div>
@@ -1107,20 +1282,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 <!-- ══ PAIN POINTS ══ -->
+<div class="studio-background-sections">
 <section id="painpoints" class="section" style="background:var(--white);">
   <div class="section-inner">
 
-    <!-- 三個困擾卡片 -->
+    <!-- 三個困擾卡片；配圖為AI生成情境示意 -->
     <div class="pain-grid">
       <div class="pain-card">
-        <div class="pain-icon">
-          <svg viewBox="0 0 60 40" fill="none" stroke="var(--brown)" stroke-width="1.5">
-            <circle cx="20" cy="12" r="8"/>
-            <path d="M4 38c0-8.8 7.2-16 16-16"/>
-            <circle cx="42" cy="12" r="8"/>
-            <path d="M58 38c0-8.8-7.2-16-16-16"/>
-          </svg>
-        </div>
+        <div class="pain-photo"><img src="images/pain-01-real.png" alt="生活情境示意" loading="lazy" width="1536" height="1024"></div>
         <div class="pain-bracket">
           <h3 class="pain-title">頭髮越來越少<br>交友很挫折</h3>
           <p class="pain-sub">開始逃避見面交談<br>越來越沒自信</p>
@@ -1128,19 +1297,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="pain-card pain-card--center">
-        <div class="pain-icon">
-          <svg viewBox="0 0 50 50" fill="none" stroke="var(--brown)" stroke-width="1.5">
-            <circle cx="25" cy="25" r="10"/>
-            <line x1="25" y1="2" x2="25" y2="8"/>
-            <line x1="25" y1="42" x2="25" y2="48"/>
-            <line x1="2" y1="25" x2="8" y2="25"/>
-            <line x1="42" y1="25" x2="48" y2="25"/>
-            <line x1="9" y1="9" x2="13" y2="13"/>
-            <line x1="37" y1="37" x2="41" y2="41"/>
-            <line x1="41" y1="9" x2="37" y2="13"/>
-            <line x1="13" y1="37" x2="9" y2="41"/>
-          </svg>
-        </div>
+        <div class="pain-photo"><img src="images/pain-02-real.png" alt="生活情境示意" loading="lazy" width="1536" height="1024"></div>
         <div class="pain-bracket pain-bracket--center">
           <h3 class="pain-title">戴帽子遮頭頂<br>悶熱不舒服</h3>
           <p class="pain-sub">過往戴髮片不自然<br>最怕戶外臨時有風</p>
@@ -1148,13 +1305,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="pain-card">
-        <div class="pain-icon">
-          <svg viewBox="0 0 50 40" fill="none" stroke="var(--brown)" stroke-width="1.5">
-            <path d="M15 8 Q20 2 25 8 Q30 14 35 8"/>
-            <path d="M10 20 Q17 12 25 20 Q33 28 40 20"/>
-            <path d="M8 32 Q16 22 25 32 Q34 42 42 32"/>
-          </svg>
-        </div>
+        <div class="pain-photo"><img src="images/pain-03-real.png" alt="生活情境示意" loading="lazy" width="1536" height="1024"></div>
         <div class="pain-bracket">
           <h3 class="pain-title">跑步，游泳運動<br>流汗怕髮片掉落</h3>
           <p class="pain-sub">想自在盡情揮汗<br>覺得一旦被別人看</p>
@@ -1300,24 +1451,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="slider-wrap">
         <div class="slider-track" id="slider-bald">
           <div class="case-card">
-            <div class="case-img">
-              <img src="images/bald-case-01.jpg" alt="光頭案例1" loading="lazy"> 
-            </div>
-            <div class="case-info">
-              <div class="case-title">光頭 · 全頂訂製</div>
-              <div class="case-desc">全頂假髮訂製，一步到位</div>
-            </div>
+            <div class="case-img"><img src="images/bald-case-01.jpg?v=20261121" alt="光頭案例1 · 佩戴效果對比" loading="lazy"></div>
+            <div class="case-info"><div class="case-title">光頭 · 真人案例 01</div><div class="case-desc">佩戴前後與髮型細節展示</div></div>
           </div>
           <div class="case-card">
-            <div class="case-img">
-              <img src="images/bald-case-02.jpg" alt="光頭案例2" loading="lazy"> 
-            </div>
-            <div class="case-info">
-              <div class="case-title">光頭 · 青春重現</div>
-              <div class="case-desc">量身打造，重拾年輕風采</div>
-            </div>
+            <div class="case-img"><img src="images/bald-case-02.jpg?v=20261121" alt="光頭案例2 · 佩戴效果對比" loading="lazy"></div>
+            <div class="case-info"><div class="case-title">光頭 · 真人案例 02</div><div class="case-desc">佩戴前後與髮型細節展示</div></div>
           </div>
-          <div class="case-card">
+<div class="case-card">
             <div class="case-img">
               <img src="images/bald-case-03.jpg" alt="光頭案例3" loading="lazy"> 
             </div>
@@ -1325,6 +1466,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <div class="case-title">光頭 · 多樣風格</div>
               <div class="case-desc">商務或休閒，自由切換風格</div>
             </div>
+          </div>
+          <div class="case-card">
+            <div class="case-img"><img src="images/bald-case-04.jpg?v=20261121" alt="光頭案例4 · 佩戴效果對比" loading="lazy"></div>
+            <div class="case-info"><div class="case-title">光頭 · 真人案例 04</div><div class="case-desc">佩戴前後與髮型細節展示</div></div>
+          </div>
+          <div class="case-card">
+            <div class="case-img"><img src="images/bald-case-05.jpg?v=20261121" alt="光頭案例5 · 佩戴效果對比" loading="lazy"></div>
+            <div class="case-info"><div class="case-title">光頭 · 真人案例 05</div><div class="case-desc">佩戴前後與髮型細節展示</div></div>
           </div>
         </div>
       </div>
@@ -1387,37 +1536,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="craft-grid">
       <div class="craft-card reveal reveal-delay-1">
-        <div class="craft-icon">🪡</div>
+        <div class="craft-photo"><img src="images/craft-01-real.png" alt="工藝概念示意" loading="lazy" width="1536" height="1024"></div>
         <div class="craft-name">真人髮絲工藝</div>
         <p class="craft-desc">精選100%真人髮絲，觸感自然真實，可染色、燙髮，完全仿真效果，為追求極致品質者首選。</p>
         <div class="craft-tag">頂級推薦</div>
       </div>
       <div class="craft-card reveal reveal-delay-2">
-        <div class="craft-icon">🕸</div>
+        <div class="craft-photo"><img src="images/craft-02-real.png" alt="工藝概念示意" loading="lazy" width="1536" height="1024"></div>
         <div class="craft-name">蕾絲底網技術</div>
         <p class="craft-desc">超薄蕾絲底座，與頭皮完美貼合，透氣舒適，髮際線呈現最自然效果，近距離無法察覺。</p>
         <div class="craft-tag">自然首選</div>
       </div>
       <div class="craft-card reveal reveal-delay-3">
-        <div class="craft-icon">💨</div>
+        <div class="craft-photo"><img src="images/craft-03-real.png" alt="工藝概念示意" loading="lazy" width="1536" height="1024"></div>
         <div class="craft-name">輕薄透氣工藝</div>
         <p class="craft-desc">採用高透氣材質，重量僅為傳統假髮的一半，長時間配戴無壓迫感，夏天也舒適自在。</p>
         <div class="craft-tag">日常推薦</div>
       </div>
       <div class="craft-card reveal reveal-delay-1">
-        <div class="craft-icon">💪</div>
+        <div class="craft-photo"><img src="images/craft-04-real.png" alt="工藝概念示意" loading="lazy" width="1536" height="1024"></div>
         <div class="craft-name">防水運動工藝</div>
         <p class="craft-desc">特殊固定技術，防水防汗，運動、游泳均可配戴，牢固服貼，專為活躍男性設計。</p>
         <div class="craft-tag">運動推薦</div>
       </div>
       <div class="craft-card reveal reveal-delay-2">
-        <div class="craft-icon">✂️</div>
+        <div class="craft-photo"><img src="images/craft-05-real.png" alt="工藝概念示意" loading="lazy" width="1536" height="1024"></div>
         <div class="craft-name">精準量頭訂製</div>
         <p class="craft-desc">一對一量頭服務，精準採集頭型數據，從弧度、髮量到髮色全面訂製，完美貼合每一位客戶。</p>
         <div class="craft-tag">訂製服務</div>
       </div>
       <div class="craft-card reveal reveal-delay-3">
-        <div class="craft-icon">🔬</div>
+        <div class="craft-photo"><img src="images/craft-06-real.png" alt="工藝概念示意" loading="lazy" width="1536" height="1024"></div>
         <div class="craft-name">仿生纖維技術</div>
         <p class="craft-desc">頂級仿生髮絲，造型持久定型，不受天氣影響，雨天潮濕環境下依然完美，維護成本低。</p>
         <div class="craft-tag">耐用推薦</div>
@@ -1487,6 +1636,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- ══ ABOUT ══ -->
+</div>
 <section id="about" class="section">
   <div class="section-inner">
     <div class="about-grid">
@@ -1540,7 +1690,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="review-slider-wrap reveal">
       <div class="review-track" id="reviewTrack">
-        <div class="review-card">
+        <div class="review-card" style="--review-photo:url('images/review-01.jpg')"><div class="review-photo"><img src="images/review-01.jpg" alt="客戶造型照片" loading="lazy"></div>
           <span class="review-quote">"</span>
           <div class="review-stars">★★★★★</div>
           <p class="review-text">配戴了Jerry的假髮出席重要場合，同事都以為我剛剪了新髮型，完全看不出來！自然程度遠超預期，強烈推薦。</p>
@@ -1552,7 +1702,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
           </div>
         </div>
-        <div class="review-card">
+        <div class="review-card" style="--review-photo:url('images/review-02.jpg')"><div class="review-photo"><img src="images/review-02.jpg" alt="客戶造型照片" loading="lazy"></div>
           <span class="review-quote">"</span>
           <div class="review-stars">★★★★★</div>
           <p class="review-text">從諮詢到完成只花了不到2小時，效率超高！Jerry師傅非常專業，幫我選的款式完全符合臉型，整個人年輕了5歲。</p>
@@ -1564,7 +1714,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
           </div>
         </div>
-        <div class="review-card">
+        <div class="review-card" style="--review-photo:url('images/review-03.jpg')"><div class="review-photo"><img src="images/review-03.jpg" alt="客戶造型照片" loading="lazy"></div>
           <span class="review-quote">"</span>
           <div class="review-stars">★★★★★</div>
           <p class="review-text">運動防脫系列真的很厲害，每天健身流汗完全沒問題，服貼又舒適。售後服務也很周到，有問題WhatsApp馬上回。</p>
@@ -1576,7 +1726,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
           </div>
         </div>
-        <div class="review-card">
+        <div class="review-card" style="--review-photo:url('images/review-04.jpg')"><div class="review-photo"><img src="images/review-04.jpg" alt="客戶造型照片" loading="lazy"></div>
           <span class="review-quote">"</span>
           <div class="review-stars">★★★★★</div>
           <p class="review-text">地中海問題困擾我多年，嘗試過很多方法都不理想。Jerry幫我量身訂製後效果驚人，朋友都說看不出來，太感謝了！</p>
@@ -1588,14 +1738,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
           </div>
         </div>
-        <div class="review-card">
+        <div class="review-card" style="--review-photo:url('images/review-05.jpg')"><div class="review-photo"><img src="images/review-05.jpg" alt="客戶造型照片" loading="lazy"></div>
           <span class="review-quote">"</span>
           <div class="review-stars">★★★★★</div>
-          <p class="review-text">第一次到店很緊張，Jerry師傅非常耐心解釋，沒有任何壓力。免費試戴後當場決定，當天就帶走了，服務真的很好。</p>
+          <p class="review-text" lang="en">I was nervous on my first visit, but Jerry patiently explained everything and made me feel at ease. After the free try-on, I decided to go ahead and took it home the same day. Excellent service!</p>
           <div class="review-author">
-            <div class="review-avatar">李</div>
+            <div class="review-avatar">W</div>
             <div>
-              <div class="review-name">李先生</div>
+              <div class="review-name">William</div>
               <div class="review-meta">教師 · M字頭案例</div>
             </div>
           </div>
@@ -1922,7 +2072,7 @@ reviewTrack.addEventListener('touchend', e => {
 let heroIndex = 0;
 const heroTrackEl = document.getElementById('heroTrack');
 const heroDotEls = document.querySelectorAll('#heroDots .carousel-dot');
-const heroSlideCount =8;
+const heroSlideCount = heroTrackEl.querySelectorAll('.hero-slide').length;
 let heroTimer = null;
 
 function heroGo(index) {
@@ -1977,6 +2127,62 @@ document.querySelectorAll('.faq-q').forEach(q => {
     if (!isOpen) { q.classList.add('open'); answer.classList.add('open'); }
   });
 });
+</script>
+<script>
+/* Auto-advance the visible case category; pause for reading and interaction. */
+(() => {
+  const section = document.getElementById('cases');
+  if (!section) return;
+  let paused = false;
+  let resumeAt = 0;
+  let inView = false;
+  const observer = new IntersectionObserver(entries => {
+    inView = entries[0].isIntersecting;
+  }, { threshold: 0.15 });
+  observer.observe(section);
+  section.addEventListener('mouseenter', () => { paused = true; });
+  section.addEventListener('mouseleave', () => { paused = false; resumeAt = Date.now() + 4000; });
+  section.addEventListener('focusin', () => { paused = true; });
+  section.addEventListener('focusout', e => {
+    if (!section.contains(e.relatedTarget)) { paused = false; resumeAt = Date.now() + 4000; }
+  });
+  section.addEventListener('pointerdown', () => { resumeAt = Date.now() + 8000; }, { passive:true });
+  section.addEventListener('touchstart', () => { resumeAt = Date.now() + 8000; }, { passive:true });
+  section.addEventListener('click', () => { resumeAt = Date.now() + 8000; });
+  setInterval(() => {
+    if (paused || !inView || document.hidden || Date.now() < resumeAt || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const panel = section.querySelector('.case-panel.active');
+    const track = panel && panel.querySelector('.slider-track');
+    if (!track) return;
+    const id = track.id.replace('slider-', '');
+    const count = track.querySelectorAll('.case-card').length;
+    const max = Math.max(0, count - getVisibleCards());
+    if (sliderOffsets[id] >= max) {
+      const tabs = Array.from(section.querySelectorAll('.case-tab'));
+      const current = tabs.findIndex(tab => tab.classList.contains('active'));
+      const next = tabs[(current + 1) % tabs.length];
+      if (!next) return;
+      section.querySelectorAll('.case-tab').forEach(tab => tab.classList.remove('active'));
+      section.querySelectorAll('.case-panel').forEach(item => item.classList.remove('active'));
+      next.classList.add('active');
+      const nextId = next.dataset.panel;
+      document.getElementById('panel-' + nextId).classList.add('active');
+      sliderOffsets[nextId] = 0;
+      updateSlider(nextId);
+    } else {
+      sliderOffsets[id] += 1;
+      updateSlider(id);
+    }
+  }, 2000);
+  window.addEventListener('resize', () => {
+    section.querySelectorAll('.slider-track').forEach(track => {
+      const id = track.id.replace('slider-', '');
+      const max = Math.max(0, track.querySelectorAll('.case-card').length - getVisibleCards());
+      sliderOffsets[id] = Math.min(sliderOffsets[id], max);
+      updateSlider(id);
+    });
+  });
+})();
 </script>
 </body>
 </html>
